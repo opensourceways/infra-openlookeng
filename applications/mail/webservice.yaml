@@ -15,6 +15,8 @@ spec:
   - port: 80
     name: website-port-http
     targetPort: 80
+    # We pinned NodePort to fix number in order to used NodePort service
+    nodePort: 32727
     protocol: TCP
   selector:
     component: mail-web-service
@@ -31,7 +33,7 @@ metadata:
     component: mail-web-service
     app: mail-suit-service
 spec:
-  replicas: 4
+  replicas: 2
   selector:
     matchLabels:
       component: mail-web-service

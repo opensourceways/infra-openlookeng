@@ -7,11 +7,11 @@ metadata:
   namespace: mail
 spec:
   accessModes:
-  - ReadWriteMany
+  - ReadWriteOnce
   resources:
     requests:
       storage: 100Gi
-  storageClassName: sas
+  storageClassName: csi-disk
   volumeMode: Filesystem
 
 ## define the config volume for both mail-core & exim4
@@ -27,5 +27,5 @@ spec:
   resources:
     requests:
       storage: 500Gi
-  storageClassName: nfs-rw
+  storageClassName: csi-nas
   volumeMode: Filesystem
