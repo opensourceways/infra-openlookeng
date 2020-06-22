@@ -13,7 +13,7 @@ data:
         root /opt/mailman-web-data;
         index index.html;
 
-        server_name mailweb.mindspore.cn;
+        server_name mailweb.openlookeng.cn;
 
         location /static {
         alias /opt/mailman-web-data/static;
