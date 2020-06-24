@@ -1,7 +1,12 @@
 resources:
-  - deployment.yaml
-  - namespace.yaml
-  - service.yaml
+- deployment.yaml
+- namespace.yaml
+- service.yaml
 commonLabels:
   app: openlookeng-website
 namespace: website
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+images:
+- name: opensourceway/openlookeng_website
+  newTag: 652de20d632cf9a5453a55419049b54ee8c578f3
