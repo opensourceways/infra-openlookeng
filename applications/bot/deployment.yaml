@@ -1,0 +1,52 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: botinfo
+  namespace: bot
+  labels:
+    app: botinfo
+spec:
+  strategy:
+    rollingUpdate:
+      maxUnavailable: 0
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: botinfo
+  template:
+    metadata:
+      labels:
+        app: botinfo
+    spec:
+      containers:
+      - name: botpod
+        image: swr.cn-south-1.myhuaweicloud.com/openeuler/bot:v1.0.202005291143390185
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: WEBSITE_URL
+          value: 'https://www.openlookeng.io/'
+        - name: CLA_REDIRECT_URL
+          value: /icla
+        - name: GITEE_OAUTH2_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: bot
+              key: gitee_auth_token
+        - name: GITEE_OAUTH2_CLIENT_CODE
+          valueFrom:
+            secretKeyRef:
+              name: bot
+              key: gitee_auth_clientcode
+        ports:
+        - containerPort: 8888
+          name: http
+          protocol: TCP
+        volumeMounts:
+        - mountPath: /bot/
+          name: configmap-volume
+        args: ["--stderrthreshold=0"]
+      volumes:
+      - name: configmap-volume
+        configMap:
+          name: bot-configmap
