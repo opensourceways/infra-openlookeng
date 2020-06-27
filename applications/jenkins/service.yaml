@@ -9,5 +9,10 @@ spec:
       targetPort: 8080
       # We pinned NodePort to fix number in order to used NodePort service
       nodePort: 32717
+    - name: jnlp
+      port: 50000
+      targetPort: 50000
+      # We pinned NodePort to fix number in order to used NodePort service
+      nodePort: 32718
   loadBalancerSourceRanges:
   type: NodePort
