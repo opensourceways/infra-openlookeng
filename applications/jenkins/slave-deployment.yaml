@@ -22,7 +22,7 @@ metadata:
     app: x86-centos-slaves
 spec:
   serviceName: x86-centos-slaves-service
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: x86-centos-slaves
@@ -90,7 +90,7 @@ spec:
             - name: TZ
               value: Asia/Shanghai
             - name: JENKINS_TUNNEL
-              value: jenkins-agent.jenkins.svc.cluster.local:50000
+              value: 10.0.0.191:32718
             - name: JENKINS_AGENT_NAME
               valueFrom:
                 fieldRef:
