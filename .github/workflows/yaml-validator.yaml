@@ -23,7 +23,7 @@ jobs:
                     if [ -f "./applications/"$file/"kustomization.yaml" ]; then
                         kustomize build  "./applications/$file" | kubeval --strict --ignore-missing-schemas
                     else
-                        kubeval --strict --ignore-missing-schemas -d .
+                        kubeval --strict --ignore-missing-schemas -d "./applications/$file"
                     fi
                 fi
             done
