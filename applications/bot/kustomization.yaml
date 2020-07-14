@@ -1,0 +1,10 @@
+resources:
+  - deployment.yaml
+  - namespace.yaml
+  - service.yaml
+  - secrets.yaml
+commonLabels:
+  app: openlookeng-bot
+namespace: bot
+
+
