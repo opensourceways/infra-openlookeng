@@ -20,6 +20,10 @@ jobs:
             do
                 if [ -d "./applications/"$file ]; then
                     echo "Validating applications of $file"
-                    kustomize build  "./applications/$file" | kubeval --strict --ignore-missing-schemas
+                    if [ -f "./applications/"$file/"kustomization.yaml" ]; then
+                        kustomize build  "./applications/$file" | kubeval --strict --ignore-missing-schemas
+                    else
+                        kubeval --strict --ignore-missing-schemas -d .
+                    fi
                 fi
             done
