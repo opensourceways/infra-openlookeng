@@ -11,7 +11,7 @@ spec:
       protocol: TCP
       port: 80
       targetPort: 8888
-      nodePort: 31200
+      nodePort: 31202
   selector:
     app: botinfo
   type: LoadBalancer
