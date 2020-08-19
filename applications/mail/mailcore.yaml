@@ -7,16 +7,19 @@ metadata:
   namespace: mail
   labels:
     app: mail-suit-service
+    component: mail-core-service
 spec:
   serviceName: mail-suit-service
   replicas: 1
   selector:
     matchLabels:
       app: mail-suit-service
+      component: mail-core-service
   template:
     metadata:
       labels:
         app: mail-suit-service
+        component: mail-core-service
     spec:
       containers:
         - name: mailman-core
