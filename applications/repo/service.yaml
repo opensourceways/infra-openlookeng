@@ -11,7 +11,8 @@ spec:
   externalTrafficPolicy: Cluster
   ports:
     - name: rsync-ssh-server-port
-      port: 22
+      # don't use the normal ssh port
+      port: 30322
       targetPort: 22
       # used to be visitable via nodeport
       nodePort: 30322
