@@ -10,8 +10,8 @@ spec:
   loadBalancerIP: 159.138.49.214
   externalTrafficPolicy: Cluster
   ports:
-    - name: rsync-ssh-server-port
-      # don't use the normal ssh port
+    # don't use the normal ssh port, we add 30322 here and use patchesJson6902 to remove old ssh 22 endpoint
+    - name: rsync-ssh-server-port-2
       port: 30322
       targetPort: 22
       # used to be visitable via nodeport
