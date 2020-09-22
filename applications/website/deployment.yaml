@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
   name: openlookeng-website
 spec:
-  replicas: 4
+  replicas: 6
   strategy:
     rollingUpdate:
       maxUnavailable: 0
