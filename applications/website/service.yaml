@@ -5,7 +5,6 @@ kind: Service
 metadata:
   name: websiteservice
 spec:
-  externalTrafficPolicy: Cluster
   ports:
     - name: httpport
       protocol: TCP
@@ -14,4 +13,4 @@ spec:
       nodePort: 31110
   selector:
     app: websiteinfo
-  type: LoadBalancer
+  type: NodePort
