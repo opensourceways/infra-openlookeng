@@ -6,7 +6,6 @@ metadata:
   name: mailman-web-service
   namespace: mail
 spec:
-  externalTrafficPolicy: Cluster
   ports:
   - port: 8000
     name: website-port-uwsgi-http
@@ -20,7 +19,7 @@ spec:
     protocol: TCP
   selector:
     component: mail-web-service
-  type: LoadBalancer
+  type: NodePort
 
 # Deployment for mail web service
 ---
