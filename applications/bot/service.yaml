@@ -13,4 +13,4 @@ spec:
       nodePort: 31202
   selector:
     app: botinfo
-  type: ClusterIP
+  type: NodePort
