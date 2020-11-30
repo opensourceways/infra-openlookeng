@@ -19,6 +19,13 @@ spec:
                 secretKeyRef:
                   key: jenkins-admin-user
                   name: openlookeng-jenkins
+          resources:
+            requests:
+              cpu: 8000m
+              memory: 16000Mi
+            limits:
+              cpu: 12000m
+              memory: 32000Mi
       initContainers:
         - name: copy-default-config
           env:
@@ -32,3 +39,7 @@ spec:
                 secretKeyRef:
                   key: jenkins-admin-user
                   name: openlookeng-jenkins
+      volumes:
+        - name: jenkins-home
+          persistentVolumeClaim:
+            claimName: cce-evs-import-jenkins-extend-volume
