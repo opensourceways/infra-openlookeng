@@ -7,3 +7,4 @@ spec:
   accessModes:
     - ReadWriteOnce
   storageClassName: csi-disk
+$patch: delete
