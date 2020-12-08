@@ -28,6 +28,6 @@ spec:
             - -u
             - $(USERNAME):$(PASSWORD)
             - --fail
-            - https://api.osinfra.cn/nginx-purger/purge?hostname=www.openlookeng.io
+            - https://api.osinfra.cn/nginx-purger/purge?hostname=openlookeng.io
       restartPolicy: Never
   backoffLimit: 2
