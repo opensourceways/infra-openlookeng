@@ -9,4 +9,4 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 images:
 - name: opensourceway/openlookeng_website
-  newTag: b0656ddeb12a95b56d4280cc180bcf6fc4f99d91
+  newTag: e5976d2bfbee3f17f78607eff748e5dba1090635
