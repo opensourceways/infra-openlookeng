@@ -42,4 +42,4 @@ spec:
       volumes:
         - name: jenkins-home
           persistentVolumeClaim:
-            claimName: jenkins
+            claimName: cce-evs-jenkins-master-data

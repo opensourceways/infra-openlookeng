@@ -9,4 +9,5 @@ spec:
   resources:
     requests:
       storage: 500Gi
-  storageClassName: ssd
+  storageClassName: csi-disk-topology
+$patch: delete
