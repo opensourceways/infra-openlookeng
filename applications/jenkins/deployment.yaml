@@ -42,4 +42,4 @@ spec:
       volumes:
         - name: jenkins-home
           persistentVolumeClaim:
-            claimName: cce-evs-import-jenkins-extend-volume
+            claimName: jenkins-data
