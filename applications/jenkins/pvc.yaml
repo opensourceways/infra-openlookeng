@@ -6,5 +6,8 @@ metadata:
 spec:
   accessModes:
     - ReadWriteOnce
-  storageClassName: csi-disk
+  resources:
+    requests:
+      storage: 500Gi
+  storageClassName: csi-disk-topology
 $patch: delete
