@@ -15,6 +15,6 @@ spec:
       http:
         paths:
           - backend:
-              serviceName: jenkins-test
+              serviceName: jenkins
               servicePort: 80
             path: /
