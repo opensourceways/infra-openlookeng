@@ -1,0 +1,45 @@
+---
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: jenkins-test
+spec:
+  template:
+    spec:
+      containers:
+        - name: jenkins-test
+          env:
+            - name: ADMIN_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  key: jenkins-admin-password
+                  name: openlookeng-jenkins
+            - name: ADMIN_USER
+              valueFrom:
+                secretKeyRef:
+                  key: jenkins-admin-user
+                  name: openlookeng-jenkins
+          resources:
+            requests:
+              cpu: 8000m
+              memory: 16000Mi
+            limits:
+              cpu: 12000m
+              memory: 32000Mi
+      initContainers:
+        - name: copy-default-config
+          env:
+            - name: ADMIN_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  key: jenkins-admin-password
+                  name: openlookeng-jenkins
+            - name: ADMIN_USER
+              valueFrom:
+                secretKeyRef:
+                  key: jenkins-admin-user
+                  name: openlookeng-jenkins
+      volumes:
+        - name: jenkins-home
+          persistentVolumeClaim:
+            claimName: cce-evs-jenkins-master-data
