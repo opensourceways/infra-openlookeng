@@ -2,12 +2,12 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: jenkins-test
+  name: jenkins
 spec:
   template:
     spec:
       containers:
-        - name: jenkins-test
+        - name: jenkins
           env:
             - name: ADMIN_PASSWORD
               valueFrom:
@@ -21,8 +21,8 @@ spec:
                   name: openlookeng-jenkins
           resources:
             requests:
-              cpu: 8000m
-              memory: 16000Mi
+              cpu: 2000m
+              memory: 2000Mi
             limits:
               cpu: 12000m
               memory: 32000Mi
