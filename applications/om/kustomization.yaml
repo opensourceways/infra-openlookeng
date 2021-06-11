@@ -1,0 +1,8 @@
+resources:
+  - namespace.yaml
+  - secret.yaml
+  - om-collect.yaml
+commonLabels:
+  owner: zhongjun
+commonAnnotations:
+  email: "jun.zhongjun@huawei.com"

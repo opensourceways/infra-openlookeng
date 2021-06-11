@@ -5,6 +5,9 @@ resources:
   - secrets.yaml
 commonLabels:
   app: openlookeng-hk-repo
+  owner: chenzeng
+commonAnnotations:
+  email: "chenzeng2@huawei.com"
 patchesStrategicMerge:
   - configmap.yaml
   - deployment.yaml

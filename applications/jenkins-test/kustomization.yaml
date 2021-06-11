@@ -5,6 +5,9 @@ resources:
   - ingress.yaml
 commonLabels:
   app: openlookeng-jenkins
+  owner: chenzeng
+commonAnnotations:
+  email: "chenzeng2@huawei.com"
 patchesStrategicMerge:
   - pvc.yaml
   - deployment.yaml

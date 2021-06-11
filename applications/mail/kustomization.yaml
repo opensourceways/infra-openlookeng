@@ -10,4 +10,8 @@ resources:
   - storage.yaml
   - suiteservice.yaml
   - webservice.yaml
+commonLabels:
+  owner: chenzeng
+commonAnnotations:
+  email: "chenzeng2@huawei.com"
 namespace: mail
