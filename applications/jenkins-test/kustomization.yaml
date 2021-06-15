@@ -7,7 +7,7 @@ commonLabels:
   app: openlookeng-jenkins
   owner: chenzeng
 commonAnnotations:
-  email: "chenzeng2@huawei.com"
+  email: "chenzeng765@163.com"
 patchesStrategicMerge:
   - pvc.yaml
   - deployment.yaml
