@@ -10,8 +10,7 @@ resources:
   - storage.yaml
   - suiteservice.yaml
   - webservice.yaml
-commonLabels:
-  owner: chenzeng
 commonAnnotations:
+  owner: chenzeng
   email: "chenzeng765@163.com"
 namespace: mail

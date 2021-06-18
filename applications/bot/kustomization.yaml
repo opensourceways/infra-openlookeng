@@ -5,8 +5,8 @@ resources:
   - secrets.yaml
 commonLabels:
   app: openlookeng-bot
-  owner: chenzeng
 commonAnnotations:
+  owner: chenzeng
   email: "chenzeng765@163.com"
 namespace: bot
 

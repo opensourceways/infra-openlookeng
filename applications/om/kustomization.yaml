@@ -2,7 +2,6 @@ resources:
   - namespace.yaml
   - secret.yaml
   - om-collect.yaml
-commonLabels:
-  owner: zhongjun
 commonAnnotations:
+  owner: zhongjun
   email: "526521735@qq.com"
