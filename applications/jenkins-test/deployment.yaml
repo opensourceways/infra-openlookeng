@@ -6,6 +6,8 @@ metadata:
 spec:
   template:
     spec:
+      imagePullSecrets:
+      - name: huawei-swr-image-pull-secret
       containers:
         - name: jenkins
           image: swr.cn-north-4.myhuaweicloud.com/opensourceway/common/jenkins:lts
