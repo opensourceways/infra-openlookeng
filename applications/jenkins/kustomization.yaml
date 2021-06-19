@@ -2,9 +2,11 @@ resources:
   - https://github.com/opensourceways/app-jenkins/deploy-without-agent?ref=stable
   - secrets.yaml
   - namespace.yaml
-  - slave-deployment.yaml
 commonLabels:
   app: openlookeng-jenkins
+commonAnnotations:
+  owner: chenzeng
+  email: "chenzeng765@163.com"
 patchesStrategicMerge:
   - pvc.yaml
   - deployment.yaml

@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: botpod
-        image: opensourceway/cibot:openlookeng
+        image: swr.cn-north-4.myhuaweicloud.com/opensourceway/common/cibot:openlookeng
         imagePullPolicy: IfNotPresent
         env:
         - name: WEBSITE_URL

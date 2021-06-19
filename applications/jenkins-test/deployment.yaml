@@ -8,6 +8,7 @@ spec:
     spec:
       containers:
         - name: jenkins
+          image: swr.cn-north-4.myhuaweicloud.com/opensourceway/common/jenkins:lts
           env:
             - name: ADMIN_PASSWORD
               valueFrom:
@@ -28,6 +29,7 @@ spec:
               memory: 32000Mi
       initContainers:
         - name: copy-default-config
+          image: swr.cn-north-4.myhuaweicloud.com/opensourceway/common/jenkins:lts
           env:
             - name: ADMIN_PASSWORD
               valueFrom:
