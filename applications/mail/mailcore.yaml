@@ -37,6 +37,8 @@ spec:
             - mountPath: /usr/lib/python3.6/email/quoprimime.py
               subPath: quoprimime.py
               name: mailman-core-config-volume
+            - mountPath: /tmp
+              name: mailman-core-tmp
           env:
             - name: DATABASE_TYPE
               value: postgres
@@ -99,3 +101,7 @@ spec:
         - name: mailman-core-volume
           persistentVolumeClaim:
             claimName: config-vol
+        - name: mailman-core-tmp
+          emptyDir:
+            medium: Memory
+            sizeLimit: "200Mi"
